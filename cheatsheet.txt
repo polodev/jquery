@@ -39,7 +39,7 @@ $('button').on('click', function () {
   $this.attr('disabled', 'disabled');
 })
 
-#5 events 201 (filter, n+4, slideUp, slideDown, siblings, next)
+#5 events 201 (filter, n+4, slideup, slidedown, siblings, next)
 =============================================
 var dd = $('dd');
 dd.filter(':nth-child(n+4)').hide();
@@ -50,3 +50,43 @@ $('dl').on('mouseenter', 'dt', function () {
   // $this.next().show(200);
   $this.next().slideDown(200).siblings('dd').slideUp(200)
 })
+#6 bind delegate, live => on
+=============================================
+$(this).clone().appendTo('body')
+
+#7  append, prepend, appendTo, prependTo, first
+after, before, $('tag', {class text})
+each
+=============================================
+$('p').first().append('<p>Hello world</p>')
+$('p').first().prepend('<p>Hello world</p>')
+$('p').first().after('<p>Hello world</p>')
+$('p').first().before('<p>Hello world</p>')
+$('p').first().before(function () {
+  return '<p>Hello world</p>';
+})
+$('<h2></h2>', {
+  class: 'myclass',
+  text: 'h2 content added from jquery'
+}).appendTo('p:nth-child(2)') //.appendTo($('p').first())
+$('p').first().prepend('<p>Hello world</p>')
+$('.co').each(function () {
+  $this = $(this)
+  $('<blockquote></blockquote>', {
+    class: 'co',
+    text: $this.text()
+  }).prependTo($this.closest('p'))
+})
+
+  
+
+
+
+
+
+
+
+
+
+
+

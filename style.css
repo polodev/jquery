@@ -2,21 +2,9 @@ body {
   width: 500px;
   margin: auto;
 }
-dl {
-  text-align: center;
-}
-dl dt {
-  background-color: #e5e5e5;
-  padding: 15px;
-  border-bottom: 1px solid #c5c5c5;
-  border-top: 1px solid #fff;
-}
-dl dt:nth-last-child(2) {
-  border-bottom: none;
-}
-dl dt:nth-child(1) {
-  border-top: none;
-}
-dl dd {
-  padding: 15px;
+blockquote.co {
+  background: #ddd;
+  padding: 10px;
+  float: right;
+  width: 35%;
 }
