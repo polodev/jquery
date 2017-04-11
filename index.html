@@ -3,26 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>jquery</title>
-  <link rel="stylesheet" href="night.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>hello world</h1>
-  <div>
-    <button data-style="day" >Day</button>
-    <button data-style="night" disabled>Night</button>
-  </div>
-  <h1>jquery practice</h1>
-  <script src="jquery.min.js"></script>
-  <script>
-    $('button').on('click', function () {
-      var $this = $(this)
-        style = $this.data('style')
-        text = $this.text().toLowerCase();
-      $this.siblings('button').removeAttr('disabled');
-      $('link').attr('href', style + '.css');
-      $this.attr('disabled', 'disabled');
-
+  <dl>
+    <dt>What are your hours</dt>
+    <dd>We are open 24X7</dd>
+    <dt>What are your hours</dt>
+    <dd>We are open 24X7</dd>
+    <dt>What are your hours</dt>
+    <dd>We are open 24X7</dd>
+    <dt>What are your hours</dt>
+    <dd>We are open 24X7</dd>
+    <dt>What are your hours</dt>
+    <dd>We are open 24X7</dd>
+    <dt>What are your hours</dt>
+    <dd>We are open 24X7</dd>
+  </dl>
+<script src="jquery.min.js"></script>
+<script>
+  (function () {
+    var dd = $('dd');
+    dd.filter(':nth-child(n+4)').hide();
+    // $('dt').on('mouseenter', function () {}
+    $('dl').on('mouseenter', 'dt', function () {
+      var $this = $(this);
+      // $this.siblings('dd').hide();
+      // $this.next().show(200);
+      $this.next().slideDown(200).siblings('dd').slideUp(200)
     })
-  </script>
+  })()
+</script>
 </body>
 </html>

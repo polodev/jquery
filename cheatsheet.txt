@@ -38,3 +38,15 @@ $('button').on('click', function () {
   $('link').attr('href', style + '.css');
   $this.attr('disabled', 'disabled');
 })
+
+#5 events 201 (filter, n+4, slideUp, slideDown, siblings, next)
+=============================================
+var dd = $('dd');
+dd.filter(':nth-child(n+4)').hide();
+// $('dt').on('mouseenter', function () {}
+$('dl').on('mouseenter', 'dt', function () {
+  var $this = $(this);
+  // $this.siblings('dd').hide();
+  // $this.next().show(200);
+  $this.next().slideDown(200).siblings('dd').slideUp(200)
+})
