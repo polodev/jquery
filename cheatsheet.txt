@@ -2,3 +2,12 @@
 =============================================
 .css('color', 'green');
 .addClass('emphasis');
+#2 not so fast
+=============================================
+jQuery(document).ready(function($) {
+  
+});
+//shorthand
+$(function () {
+
+})
