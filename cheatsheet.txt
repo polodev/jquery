@@ -78,6 +78,9 @@ $('.co').each(function () {
   }).prependTo($this.closest('p'))
 })
 
+#8  extend
+=============================================
+$.extend(this.config, config);
   
 
 
