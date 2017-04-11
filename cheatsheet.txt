@@ -11,3 +11,30 @@ jQuery(document).ready(function($) {
 $(function () {
 
 })
+#3 basic quering the dom (children, find, eq, next, prev)
+=============================================
+//descendant
+$('ul.emphasis').children('li') //return direct children
+$('ul.emphasis').find('li') //return all children
+$('ul.emphasis').find('li').addClass('class_name')
+$('ul.emphasis').children('nth-child(2)').text('added with jquery')
+$('ul.emphasis').children('li').eq(0)
+$('ul.emphasis').children('li').eq(2).next()
+$('ul.emphasis').children('li').eq(2).prev()
+
+//ascendant 
+$('li').parent()
+$('li').parent('ul') //single parent
+$('li').parents('ul') //all ascendant
+$('li').closest('ul') //closest('selector')
+
+#4 events 101 (on, click, data, text, removeAttr, attr)
+=============================================
+$('button').on('click', function () {
+  var $this = $(this)
+    style = $this.data('style')
+    text = $this.text().toLowerCase();
+  $this.siblings('button').removeAttr('disabled');
+  $('link').attr('href', style + '.css');
+  $this.attr('disabled', 'disabled');
+})

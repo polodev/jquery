@@ -3,10 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>jquery</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="night.css">
 </head>
 <body>
+  <h1>hello world</h1>
+  <div>
+    <button data-style="day" >Day</button>
+    <button data-style="night" disabled>Night</button>
+  </div>
   <h1>jquery practice</h1>
-  <script src="script.js"></script>
+  <script src="jquery.min.js"></script>
+  <script>
+    $('button').on('click', function () {
+      var $this = $(this)
+        style = $this.data('style')
+        text = $this.text().toLowerCase();
+      $this.siblings('button').removeAttr('disabled');
+      $('link').attr('href', style + '.css');
+      $this.attr('disabled', 'disabled');
+
+    })
+  </script>
 </body>
 </html>
