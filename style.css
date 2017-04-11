@@ -3,31 +3,6 @@ body {
   margin: auto;
   font-family: arial;
 }
-.hide {
+p {
   display: none;
-}
-#form {
-  top: 10px;
-  width: 500px;
-  background: #e3e3e3;
-  padding: 50px;
-}
-#form label {
-  display: block;
-}
-#form input,
-#form textarea {
-  width: 100%;
-  padding: 5px;
-  margin: 10px;
-  margin-left: 0;
-}
-.js #form {
-  position: absolute;
-}
-span.close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
 }

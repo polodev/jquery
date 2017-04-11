@@ -82,9 +82,10 @@ $('.co').each(function () {
 =============================================
 $.extend(this.config, config);
   
-
-
-
+#10  speeds._default/slow/fast 400/600/200
+=============================================
+$.fx.speeds.tortoise = 4000;
+$(this).siblings('p').slideDown('tortoise');
 
 
 

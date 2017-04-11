@@ -7,72 +7,27 @@
 <script src="jquery.min.js"></script>
 </head>
 <body>
-<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, blanditiis?</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<div id="form">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name">
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email">
-  </div>
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea name="message" id="message" cols="30" rows="10"></textarea>
-
-  </div>
-</div>
-<script>
-(function () {
-  $('html').addClass('js');
-  var contactForm = {
-    form: $('#form'),
-    config: {
-      effect: 'fadeToggle',
-      timeout: 300
-    },
-    init (config) {
-      $.extend(this.config, config);
-        this.form.hide();
-        $('<button></button>', {
-          class: 'button',
-          text: 'open form'
-        }).insertBefore('#form').on('click',  contactForm.show)
-    },
-    show() {
-      $(this).hide(); //button hide
-      var cf = contactForm.config;
-      contactForm.form[cf.effect](cf.timeout);
-      if(contactForm.form.find('span.close').length) return;
-      $('<span></span>', {
-        class: 'close',
-        text: 'X'
-      }).appendTo(contactForm.form).on('click', contactForm.close)
-    },
-    close () {
-      var cf = contactForm.config;
-      contactForm.form[cf.effect](cf.timeout);
-      $('button.button').show();
-    }
-  }
-  contactForm.init({
-    effect: 'slideToggle'
-  })
-  
-})()
-</script>
+  <h1>reveal</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <script>
+    (function () {
+      $('h1').on('click', function() {
+        $.fx.speeds._default = 2000;
+        $.fx.speeds.tortoise = 4000;
+        $(this).siblings('p').slideDown('tortoise');
+      })
+    })()
+  </script>
 </body>
 </html>
