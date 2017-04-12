@@ -127,6 +127,24 @@ box.css({
   }
 })
 
+#12  fadeSlideToggle
+jQuery.fn.[custom function]
+$.isFunction(function_name)
+=============================================
+  var content = $('div.content').hide();
+  jQuery.fn.slideFadeToggle = function( speed, callback ) {
+    return this.animate({
+      height: 'toggle',
+      opacity: 'toggle'
+    }, speed || 400,  function () {
+      $.isFunction(callback) && callback.call(this);
+    });
+  };
+    $('h1').on('click', function () {
+      $(this).next().slideFadeToggle(2000, function () {
+        console.log('completed');
+      });
+    })
 
 
 
