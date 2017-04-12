@@ -87,6 +87,19 @@ $.extend(this.config, config);
 $.fx.speeds.tortoise = 4000;
 $(this).siblings('p').slideDown('tortoise');
 
+#10  custom effect
+=============================================
+var content = $('.content').hide();
+jQuery.fn.flash = function( speed, easing, callback ) {
+  $this = $(this)
+  $this.slideDown(speed, function () {
+     $this.delay(2000).slideUp(speed)
+  });
+};
+$('h1').on('click', function () {
+  content.flash(500);
+})
+    
 
 
 

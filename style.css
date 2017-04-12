@@ -4,5 +4,6 @@ body {
   font-family: arial;
 }
 p {
-  display: none;
+  margin: 0;
+  margin-bottom: 20px;
 }
