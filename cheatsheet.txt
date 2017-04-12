@@ -87,7 +87,7 @@ $.extend(this.config, config);
 $.fx.speeds.tortoise = 4000;
 $(this).siblings('p').slideDown('tortoise');
 
-#10  custom effect
+#11  custom effect
 =============================================
 var content = $('.content').hide();
 jQuery.fn.flash = function( speed, easing, callback ) {
@@ -100,6 +100,30 @@ $('h1').on('click', function () {
   content.flash(500);
 })
     
+#12  animate
+=============================================
+animate({param1: value1}, speed, callback);
+
+animate({}, {completed(){}, step() {}, duration: 400, queue: true})
+
+box.css('font-size', '+=2');
+  
+box.css({
+  'position': 'absolute'
+}).animate({
+  left: winWidth
+}, 500).animate({
+  top: winHeight
+}, {
+  duration: 1000,
+  queue: false,
+  step () {
+    console.log("step")
+  },
+  complete () {
+    console.log("complete")
+  }
+})
 
 
 

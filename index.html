@@ -5,36 +5,72 @@
   <title>jquery</title>
   <link rel="stylesheet" href="style.css">
   <script src="jquery-3.2.1.js"></script>
+  <style>
+  body {
+    font-family: arial;
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  .box {
+    background: red;
+    width: 300px;
+    padding: 20px;
+  }
+  button {
+    margin-top: 20px;
+  }
+  </style>
 </head>
 <body>
-  <h1>reveal</h1>
-  <div class="content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </div>
-  <script>
-    (function () {
-      var content = $('.content').hide();
-      jQuery.fn.flash = function( speed, easing, callback ) {
-        $this = $(this)
-        $this.slideDown(speed, function () {
-           $this.delay(2000).slideUp(speed)
-        });
-      };
-      $('h1').on('click', function () {
-        content.flash(100);
-      })
-    })()
-  </script>
+<div class="box">
+<h1>Box </h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<button>Increase font</button>
+
+<script>
+var button = $('button'),
+    box = $('.box');
+    winWidth = $(window).width() /2 - box.outerWidth() /2 
+    winHeight = $(window).height() / 2 - box.outerHeight() /2
+button.on('click', function () {
+  // var fontSize = parseInt( box.css('font-size'), 10 )
+  // box.css('font-size', fontSize + 10);
+  // box.css('font-size', '+=2');
+  // box.animate({
+  //   position: 'absolute',
+  //   fontSize: '+=2',
+  //   width : '500px',
+  // }, 2000).animate({
+  //   top: '10px',
+  //   left: '400px'
+  // }, {
+  //   speed: 500,
+  //   queue: true
+  // })
+  box.css({
+    'position': 'absolute'
+  }).animate({
+    left: winWidth
+  }, 500).animate({
+    top: winHeight
+  }, {
+    duration: 1000,
+    queue: false,
+    step () {
+      console.log("step")
+    },
+    complete () {
+      console.log("complete")
+    }
+  })
+})
+</script>
 </body>
 </html>
